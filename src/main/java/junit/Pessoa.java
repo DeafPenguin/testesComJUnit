@@ -7,16 +7,24 @@ public class Pessoa {
     private String nome;
     private LocalDate nascimento;
 
-    public Pessoa(String nome, LocalDate nascimento){
+    public Pessoa(String nome, LocalDate nascimento) {
         this.nome = nome;
         this.nascimento = nascimento;
     }
 
-    public String getNome(){ return nome; }
-    public LocalDate getNascimento(){ return nascimento; }
-    public int getIdade(){ return (int) ChronoUnit.YEARS.between(this.nascimento, LocalDate.now()); }
+    public String getNome() {
+        return nome;
+    }
 
-    public boolean ehMaiorDeIdade(){
+    public LocalDate getNascimento() {
+        return nascimento;
+    }
+
+    public int getIdade() {
+        return (int) ChronoUnit.YEARS.between(this.nascimento, LocalDate.now());
+    }
+
+    public boolean ehMaiorDeIdade() {
         return getIdade() >= 18;
     }
 }

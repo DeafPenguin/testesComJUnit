@@ -4,37 +4,37 @@ import org.junit.jupiter.api.*;
 
 import java.time.LocalDate;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ConsultarDadosDePessoasTest {
 
     @BeforeAll
-    static void configuraConexao(){
+    static void configuraConexao() {
         BancoDeDados.iniciarConexao();
     }
 
     @BeforeEach
-    void insereDadosParaTeste(){
+    void insereDadosParaTeste() {
         BancoDeDados.cadastraPessoa(new Pessoa("Victor", LocalDate.of(1993, 6, 30)));
     }
 
     @AfterEach
-    void removeDadosDoTeste(){
+    void removeDadosDoTeste() {
         BancoDeDados.deletaPessoa(new Pessoa("Victor", LocalDate.of(1993, 6, 30)));
     }
 
     @AfterAll
-    static void finalizaConexao(){
+    static void finalizaConexao() {
         BancoDeDados.finalizarConexao();
     }
 
     @Test
-    void validarDadosDeRetorno(){
+    void validarDadosDeRetorno() {
         assertTrue(true);
     }
 
     @Test
-    void validarDadosDeRetorno2(){
+    void validarDadosDeRetorno2() {
         assertTrue(true);
     }
 }

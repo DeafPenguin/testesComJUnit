@@ -1,7 +1,7 @@
 package junit;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
 import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PessoaTest {
 
     @Test
-    void validaSeEstaNulo(){
+    void validaSeEstaNulo() {
         Pessoa pessoaNula = null;
         assertNull(pessoaNula);
 
@@ -18,13 +18,13 @@ public class PessoaTest {
     }
 
     @Test
-    void validarCalculoDeIdade(){
+    void validarCalculoDeIdade() {
         Pessoa victor = new Pessoa("Victor", LocalDate.of(1993, 6, 30));
         assertEquals(29, victor.getIdade());
     }
 
     @Test
-    void deveRetornarSeEhMaiorDeIdade(){
+    void deveRetornarSeEhMaiorDeIdade() {
         /** Maior de idade **/
         Pessoa victor = new Pessoa("Victor", LocalDate.of(1993, 6, 30));
         assertEquals(true, victor.ehMaiorDeIdade());
